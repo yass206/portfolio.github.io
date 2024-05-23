@@ -1,0 +1,189 @@
+/* Réinitialisation de la boîte et suppression des marges et paddings par défaut */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Couleur de fond pour tout le corps du document */
+body {
+    background-image: url('imagedefond.jpg');
+    background-size: cover; /* Couvre tout l'espace disponible */
+}
+
+/* Style commun pour les listes, les liens et les boutons */
+li, a, button {
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+/* En-tête avec une flexbox pour aligner le logo et la navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+}
+
+/* Style pour le logo */
+.logo {
+    cursor: pointer;
+    height: 140px;
+    width: 140px;
+}
+
+/* Navigation principale en flex pour aligner les liens horizontalement */
+.nav_link {
+    display: flex;
+    list-style: none;
+}
+
+/* Style pour chaque élément de la liste de navigation */
+.nav_link > li {
+    padding: 0px 20px;
+    position: relative; /* Positionnement relatif pour les sous-menus */
+}
+
+/* Transition en douceur pour les liens de la navigation */
+.nav_link li a {
+    transition: all 0.3s ease 0s;
+}
+
+/* Changement de couleur au survol des liens de la navigation */
+.nav_link li a:hover {
+    color: #0088a9;
+}
+
+/* Sous-menus initialement cachés */
+.sousmenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positionner en dessous de l'élément parent */
+    left: 0;
+    background: #333; /* Un fond plus sombre pour contraster */
+    min-width: 200px; /* Largeur minimale pour les sous-menus */
+}
+
+/* Affichage du sous-menu au survol de l'élément de liste parent */
+.nav_link > li:hover .sousmenu {
+    display: block;
+}
+
+/* Style pour les éléments de la liste du sous-menu */
+.sousmenu li {
+    padding: 5px 20px; /* Padding pour les éléments du sous-menu */
+    color: black; /* Couleur du texte pour les éléments du sous-menu */
+}
+
+/* Couleur du texte pour les liens du sous-menu */
+.sousmenu li a {
+    color: rgb(247, 244, 244);
+}
+
+/* Changement de fond et de couleur au survol des liens du sous-menu */
+.sousmenu li a:hover {
+    color: #0088a9;
+    background-color: #262626; /* Couleur de fond subtile au survol */
+}
+
+/* Style pour le bouton de contact */
+button {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+/* Changement de fond au survol du bouton */
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+
+
+/* ------------------------------------------------------------------------------- */
+
+.container {
+    position: relative;
+}
+
+.container .wrapper {
+    width: 60vw;
+    height: 40vh; /* Ajusté pour une forme plus rectangulaire */
+    box-shadow: 15px 5px 20px rgba(0, 0, 0, 0.6); /* Correction de la syntaxe RGBA */
+    margin: 5rem auto;
+    overflow: hidden;
+    border-radius: 20px; /* Ajouté pour des coins arrondis */
+    position: relative; /* Nécessaire pour positionner les boutons à l'intérieur */
+    background-color: white; /* Ajouter un fond pour rendre les boutons plus visibles */
+}
+
+.container .wrapper-holder {
+    display: grid;
+    grid-template-columns: repeat(4, 100%);
+    height: 100%;
+    width: 100%;
+}
+
+.container #slider-img-1 {
+    background-image: url('experrience-bred.png');
+    background-position: center;
+    background-size: cover; /* S'assure que l'image couvre toute la zone */
+}
+.container #slider-img-2{
+    background-image: url('experrience-evolukid.png');
+    background-position: center;
+    background-size: cover; /* S'assure que l'image couvre toute la zone */
+}
+.container #slider-img-3{
+    background-image: url('experrience-mutuelle-generale.png');
+    background-position: center;
+    background-size: cover; /* S'assure que l'image couvre toute la zone */
+}
+.container #slider-img-4 {
+    background-image: url('experrience-deezer.png');
+    background-position: center;
+    background-size: cover; /* S'assure que les images couvrent toute la zone */
+}
+
+.container .button-holder {
+    position: absolute;
+    left: 50%;
+    bottom: 10px; /* Ajusté pour le placer au bas de la wrapper */
+    transform: translateX(-50%); /* Centré horizontalement */
+    display: flex; /* Pour aligner les boutons en ligne */
+    z-index: 10; /* Assurez-vous que les boutons apparaissent au-dessus des autres éléments */
+}
+
+.container .button-holder .button {
+    background-color: black;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; /* Rendu circulaire */
+    display: inline-block;
+    margin: .3rem;
+    cursor: pointer; /* Ajout d'un pointeur pour indiquer qu'ils sont cliquables */
+}
+
+.button:hover {
+    box-shadow: 0px 0px 7px 4px rgba(0, 255, 255, 0.6); /* Correction de la syntaxe RGBA */
+}
+
+@keyframes slider {
+    0% { transform: translateX(0%); }
+    10% { transform: translateX(-100%); }
+    20% { transform: translateX(-100%); }
+    30% { transform: translateX(-200%); }
+    40% { transform: translateX(-200%); }
+    50% { transform: translateX(-200%); }
+    60% { transform: translateX(-300%); }
+    70% { transform: translateX(-300%); }
+    80% { transform: translateX(-300%); }
+    90% { transform: translateX(0%); }
+    100% { transform: translateX(0%); }
+}

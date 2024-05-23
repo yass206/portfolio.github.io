@@ -1,0 +1,143 @@
+/* Réinitialisation de la boîte et suppression des marges et paddings par défaut */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Couleur de fond pour tout le corps du document */
+body {
+    background-image: url('imagedefond.jpg');
+    background-size: cover; /* Couvre tout l'espace disponible */
+}
+
+/* Style commun pour les listes, les liens et les boutons */
+li, a, button {
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+/* En-tête avec une flexbox pour aligner le logo et la navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+}
+
+/* Style pour le logo */
+.logo {
+    cursor: pointer;
+    height: 140px;
+    width: 140px;
+}
+
+/* Navigation principale en flex pour aligner les liens horizontalement */
+.nav_link {
+    display: flex;
+    list-style: none;
+}
+
+/* Style pour chaque élément de la liste de navigation */
+.nav_link > li {
+    padding: 0px 20px;
+    position: relative; /* Positionnement relatif pour les sous-menus */
+}
+
+/* Transition en douceur pour les liens de la navigation */
+.nav_link li a {
+    transition: all 0.3s ease 0s;
+}
+
+/* Changement de couleur au survol des liens de la navigation */
+.nav_link li a:hover {
+    color: #0088a9;
+}
+
+/* Sous-menus initialement cachés */
+.sousmenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positionner en dessous de l'élément parent */
+    left: 0;
+    background: #333; /* Un fond plus sombre pour contraster */
+    min-width: 200px; /* Largeur minimale pour les sous-menus */
+}
+
+/* Affichage du sous-menu au survol de l'élément de liste parent */
+.nav_link > li:hover .sousmenu {
+    display: block;
+}
+
+/* Style pour les éléments de la liste du sous-menu */
+.sousmenu li {
+    padding: 5px 20px; /* Padding pour les éléments du sous-menu */
+    color: black; /* Couleur du texte pour les éléments du sous-menu */
+}
+
+/* Couleur du texte pour les liens du sous-menu */
+.sousmenu li a {
+    color: rgb(247, 244, 244);
+}
+
+/* Changement de fond et de couleur au survol des liens du sous-menu */
+.sousmenu li a:hover {
+    color: #0088a9;
+    background-color: #262626; /* Couleur de fond subtile au survol */
+}
+
+/* Style pour le bouton de contact */
+button {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+/* Changement de fond au survol du bouton */
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* <---------------------------------------------------------------------------------------------------------------------------------------------------------->*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #000000; /* Texte en blanc */
+  }
+  
+  .diplome {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin: 0;
+    color: #000000; /* Texte en blanc */
+  }
+  
+  p {
+    margin: 5px 0;
+    color: #000000; /* Texte en blanc */
+  }
+  
